@@ -1,0 +1,3 @@
+[submodule "public/beitie"]
+	path = public/beitie
+	url = git@github.com:yuweijun/www.shufabeitie.com.git
