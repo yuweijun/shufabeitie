@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+
+    #beities.container-fluid
+        .alert.alert-info.
+            中国历史上的书法名家列表。
+
+        #beitie-list.row
+            each author, index in authors
+                .col-md-3.col-xs-6
+                    .thumbnail
+                        .caption.ellipsis
+                            a(href="/shufa/#{author}/")= (index + 1) + '. ' + author

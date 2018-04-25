@@ -1,0 +1,39 @@
+#! /bin/sh
+
+function pdftojpg {
+    if [ -d $1 ]
+    then
+        echo $1
+        for file in $(ls $1)
+        do
+            if [[ $file =~ .*\.pdf ]]
+            then
+                dir=$1/${file%.pdf}
+                if [ -e $dir ]
+                then
+                    echo "$dir exists"
+                else
+                    echo "mkdir $dir"
+                    mkdir $dir
+                    echo convert $1/$file $dir/fatie-%03d.jpg
+                    convert $1/$file $dir/fatie-%03d.jpg
+                fi
+            fi
+        done
+    elif [[ $1 =~ .*\.pdf ]]
+    then
+        file=$1
+        dir=${file%.pdf}
+        if [ -e $dir ]
+        then
+            echo "$dir exists"
+        else
+            echo "mkdir $dir"
+            mkdir $dir
+            echo convert $file $dir/fatie-%03d.jpg
+            convert $file $dir/fatie-%03d.jpg
+        fi
+    fi
+}
+
+pdftojpg $1

@@ -1,0 +1,45 @@
+extends ../layout
+
+block content
+
+    #beities.container-fluid
+
+        ol.breadcrumb.alert.alert-info
+            li
+                a(href="/shufa/") 历代名家
+            li
+                a(href="../")= author
+            li
+                a(href="../#{prev}/") 上一法帖
+            li
+                a(href="../#{next}/") 下一法帖
+            li.paper-name-container.active
+                = paper
+                a.paper-name(href="./info/")= "\u0020\u00B6"
+
+        #beitie-imgs-container(data-img-size="#{images.length}")
+            each file, index in images
+                - if (index == 0)
+                    .thumbnail.beitie-img-container(id="a#{index}")
+                        img.img-responsive.beitie-img(src="/#{path1000}/#{file}")
+                - else
+                    .thumbnail.beitie-img-container.hide.beitie-lazy-container(id="a#{index}", data-original="/#{path1000}/#{file}")
+
+        - if (info.published)
+            #beitie-text-container.alert.alert-info
+                #beitie-text-show
+                    != info.text
+        - else if (info.text)
+            #beitie-text-container.alert.alert-info.hide
+                #beitie-text-show
+                    != info.text
+
+block footer
+    footer#footer
+        #footer-navigator
+            a#beitie-pagination-top(href="#navbar-top") 顶部
+            a#beitie-img-blocks.hide(href="#") 平铺
+            a#beitie-pagination-next(href="#") 下一张
+
+        script(src="/javascripts/jquery.blocksit.js")
+        script(src="/javascripts/show.js")

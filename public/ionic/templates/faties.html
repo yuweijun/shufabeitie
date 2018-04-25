@@ -1,0 +1,13 @@
+<ion-view view-title="{{author}}">
+  <ion-content>
+    <div class="button-bar padding">
+      <a class="button button-small button-light col-12" href="#/authors">历代名家</a>
+    </div>
+
+    <div id="beitie-list" class="list">
+      <a class="item" bindonce ng-repeat="(index, fatie) in faties" href="#/{{fatie.value}}">
+        {{index + 1}}. {{fatie.key}}
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

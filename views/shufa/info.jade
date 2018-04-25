@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+
+    #beities.container-fluid
+
+        ol.breadcrumb.alert.alert-info
+            li
+                a(href="../")= author
+            li
+                a(href="/shufa/#{author}/#{prev}/info") 上一法帖
+            li
+                a(href="/shufa/#{author}/#{next}/info") 下一法帖
+            li
+                a(href="./")= paper
+
+        form#beitie-info-container.form.alert.alert-warning(method="post")
+            .row.form-group
+                .col-md-12
+                    label 碑帖简介
+                    textarea#beitie-text.form-control(name="text")= info.text
+            .row.beitie-info-row
+                .col-md-12
+                    .row
+                        .form-group.col-md-12.col-sm-12.text-center
+                            input.btn.btn-default(type="submit", value="保存")
+

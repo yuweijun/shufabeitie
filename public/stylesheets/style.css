@@ -1,0 +1,125 @@
+html {
+    overflow-y: scroll;
+}
+#navbar-top {
+    border-radius: 0;
+}
+#beities {
+    margin-bottom: 40px;
+}
+.beitie-version {
+    font-size: 12px;
+    margin-left: 10px;
+    color: #fff;
+}
+#beitie-text {
+    height: 360px;
+}
+#beitie-text-container p {
+    margin: 0;
+    text-indent: 2em;
+}
+.beitie-info-row {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#beitie-description {
+    width: 95%;
+    resize: none;
+}
+#beitie-imgs-container {
+    position: relative;
+}
+.beitie-img-container {
+    min-height: 60px;
+    -webkit-transition: top 1s ease, left 1s ease;
+    -moz-transition: top 1s ease, left 1s ease;
+    -o-transition: top 1s ease, left 1s ease;
+    -ms-transition: top 1s ease, left 1s ease;
+}
+.beitie-img {
+    border-radius: 4px;
+    width: 100%;
+}
+.beitie-img.loading-img {
+    width: auto;
+    margin: 17px auto;
+}
+.paper-name {
+    visibility: hidden;
+    color: #999;
+    text-decoration: none;
+}
+.paper-name:hover {
+    visibility: visible;
+    color: #999;
+    text-decoration: none;
+}
+#footer-pagination {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+#footer-info {
+    background: #000;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+#footer-navigator {
+    width: 100%;
+    line-height: 32px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+#footer-navigator:before, #footer-navigator:after {
+    content: "";
+    display: table;
+}
+#footer-navigator:after {
+    clear: both;
+}
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.form-signin {
+    max-width: 330px;
+    margin: 0 auto 20px auto;
+}
+.form-signin .form-signin-heading, #signin-name, #signin-password {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+#signin-submit {
+    margin-bottom: 20px;
+}
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+#version-switch {
+    padding: 15px;
+    cursor: pointer;
+    color: #999;
+}
+#beitie-pagination-top, #beitie-img-blocks, #beitie-pagination-next {
+    width: 60px;
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+}
+#beitie-pagination-top {
+    float: left;
+    margin: 5px 0 5px 20px;
+}
+#beitie-pagination-next, #beitie-img-blocks {
+    float: right;
+    margin: 5px 20px 5px 0;
+}

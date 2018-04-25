@@ -1,0 +1,14 @@
+{
+    "apps": [{
+        "name": "shufabeitie",
+        "script": "bin/www",
+        "log_date_format": "YYYY-MM-DD HH:mm Z",
+        "ignore_watch": ["[\\/\\\\]\\./", "node_modules", "public/beitie"],
+        "watch": true,
+        "vizion": true,
+        "autorestart": true,
+        "env": {
+            "NODE_ENV": "development"
+        }
+    }]
+}

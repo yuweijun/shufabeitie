@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    #beities.container-fluid
+        .alert.alert-info.
+            首页会随机刷出60个法帖。
+
+        #beitie-imgs-container.row
+            each fatie, index in faties
+                .col-md-4.col-sm-6
+                    .thumbnail
+                        .caption
+                            a(target="_blank", href="/shufa/#{fatie.author}/#{fatie.paper}/")= (index + 1) + '. ' + fatie.paper
