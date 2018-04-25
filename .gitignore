@@ -1,0 +1,8 @@
+.DS_Store
+.gitignore
+.githubignore
+Thumbs.db
+bower_components
+node_modules
+test
+java
