@@ -1,6 +1,6 @@
 var fs = require('fs');
 var path = require('path');
-var lwip = require('lwip');
+var jimp = require('jimp');
 
 var thumbnail = function(thumbnailWidth, dir) {
     var exist = false,
@@ -20,26 +20,28 @@ var thumbnail = function(thumbnailWidth, dir) {
         if (!exist) {
             console.log("create " + thumbnailWidth + " thumbnail image for path: 【" + directory + "】");
             ts.forEach(function(t) {
+                console.log(t);
                 if (/\.jpg/i.test(t)) {
-                    lwip.open(path.join(dir, t), function(err, image) {
+                    console.log(path.join(dir, t));
+                    jimp.read(path.join(dir, t), function(err, image) {
                         if (err) {
                             console.log(err);
                             return;
                         }
-                        var imageWidth = image.width(),
+                        var imageWidth = image.bitmap.width,
                             ratio = thumbnailWidth / imageWidth,
                             simg = path.join(directory, t);
 
                         if (imageWidth > thumbnailWidth) {
                             image.scale(ratio, function(err, image) {
-                                image.writeFile(simg, function(err) {
+                                image.write(simg, function(err) {
                                     if (err) {
                                         console.log(err);
                                     }
                                 });
                             });
                         } else {
-                            image.writeFile(simg, function(err) {
+                            image.write(simg, function(err) {
                                 if (err) {
                                     console.log(err);
                                 }

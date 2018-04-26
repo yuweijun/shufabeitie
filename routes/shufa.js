@@ -3,6 +3,7 @@ var path = require('path');
 var date = require('datejs');
 var express = require('express');
 var authenticate = require('../modules/users');
+var thumbnail = require('../modules/thumbnail');
 var jsonarrayutils = require('../modules/jsonarrayutils');
 var faties = require('../modules/indexgenerator');
 var router = express.Router();
@@ -124,9 +125,13 @@ router.get(/^\/([^\/]*?)\/([^\/]*?)\/$/, function(req, res) {
 
     if (fs.existsSync(w100Directory)) {
         w100exist = true;
+    } else {
+        thumbnail(100, w100Directory);
     }
     if (fs.existsSync(w1000Directory)) {
         w1000exist = true;
+    } else {
+        thumbnail(1000, w1000Directory);
     }
     if (fs.existsSync(infofile)) {
         infoexist = true;

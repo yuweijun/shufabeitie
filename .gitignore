@@ -1,6 +1,7 @@
 .DS_Store
 .gitignore
 .githubignore
+package-lock.json
 Thumbs.db
 bower_components
 node_modules
