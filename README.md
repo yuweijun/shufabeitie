@@ -12,6 +12,8 @@
 2. 然后通过以下命令安装`nvm`和`node`，并运行项目。
 
 ```
+$ sudo apt-get install imagemagick
+
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 $ nvm install 0.12.2
 $ npm install pm2 -g
