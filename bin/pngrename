@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/bash
 
 function renamebeitie {
     if [ -d $1 ]

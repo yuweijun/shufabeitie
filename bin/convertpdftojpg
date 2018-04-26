@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/bash
 
 function pdftojpg {
     if [ -d $1 ]
