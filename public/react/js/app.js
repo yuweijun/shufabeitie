@@ -16,9 +16,6 @@ requirejs.config({
         underscore: {
             exports: '_'
         },
-        cache: {
-            deps: ['backbone']
-        },
         bootstrap: {
             deps: ['jquery']
         }
@@ -31,11 +28,10 @@ requirejs.config({
         handlebars: 'bower_components/handlebars/handlebars.amd',
         underscore: 'bower_components/underscore/underscore',
         backbone: 'bower_components/backbone/backbone',
-        cache: 'bower_components/backbone-fetch-cache/backbone.fetch-cache',
         swiper: 'bower_components/swiper/dist/js/swiper',
         text: 'bower_components/requirejs-text/text'
     },
-    deps: ['jquery', 'bootstrap', 'backbone', 'cache']
+    deps: ['jquery', 'bootstrap', 'backbone']
 });
 
 // initialize Backbone routes and Backbone.history.start()
