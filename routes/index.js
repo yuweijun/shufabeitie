@@ -12,7 +12,7 @@ router.use(function(err, req, res, next) {
 /* GET home page. */
 router.get('/', function(req, res, next) {
     var random = [], size = faties.papers.length - 1;
-    for (var i = 0; i <= size && i < 60; i++) {
+    for (var i = 0; i <= size && i < 50; i++) {
         var pos = Math.round(Math.random() * size);
         random.push(faties.papers[pos]);
     }
@@ -25,8 +25,7 @@ router.get('/', function(req, res, next) {
         // xhr
         res.json(random);
     } else {
-        // res.render('index', data);
-        res.redirect('/angularjs/#/');
+        res.render('index', data);
     }
 });
 

@@ -126,12 +126,12 @@ router.get(/^\/([^\/]*?)\/([^\/]*?)\/$/, function(req, res) {
     if (fs.existsSync(w100Directory)) {
         w100exist = true;
     } else {
-        thumbnail(100, w100Directory);
+        thumbnail(100, dir);
     }
     if (fs.existsSync(w1000Directory)) {
         w1000exist = true;
     } else {
-        thumbnail(1000, w1000Directory);
+        thumbnail(1000, dir);
     }
     if (fs.existsSync(infofile)) {
         infoexist = true;

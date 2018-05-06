@@ -14,7 +14,7 @@ define(['react', 'js/react.render', 'jquery'], function(React, render, $) {
 
         return (
         <div>
-          <div className="alert alert-info">首页会随机刷出60个法帖。</div>
+          <div className="alert alert-info">首页会随机刷出50个法帖。</div>
           <div id="beitie-imgs-container" className="row">
             {this.props.faties.map(foreach)}
           </div>
