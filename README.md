@@ -18,6 +18,7 @@ $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh |
 $ nvm install 0.12.2
 $ npm install pm2 -g
 $ npm install
+$ bin/jpgthumbnail
 $ pm2 start processes.json
 ```
 
