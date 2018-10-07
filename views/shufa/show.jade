@@ -19,7 +19,7 @@ block content
 
         #beitie-imgs-container(data-img-size="#{images.length}")
             each file, index in images
-                - if (index == 0)
+                - if (index <= 10)
                     .thumbnail.beitie-img-container(id="a#{index}")
                         img.img-responsive.beitie-img(src="/#{path1000}/#{file}")
                 - else

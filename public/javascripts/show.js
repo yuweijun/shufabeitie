@@ -49,6 +49,7 @@ $(function() {
         var id = this.id.replace('a', '');
         current = parseInt(id, 10);
         window.location.href = '#a' + current;
+        $('#beitie-img-blocks,#beitie-pagination-next').toggleClass('hide');
     });
 
     // 向下翻页
