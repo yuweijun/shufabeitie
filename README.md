@@ -17,6 +17,12 @@ $ sudo apt-get install imagemagick
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 $ nvm install 0.12.2
 $ npm install pm2 -g
+
+$ git clone https://github.com/yuweijun/www.shufabeitie.com.git beitie
+$ git clone https://github.com/yuweijun/shufabeitie.git shufabeitie
+
+$ cd shufabeitie
+$ ln -s ../beitie public/beitie
 $ npm install
 $ bin/jpgthumbnail
 $ pm2 start processes.json
