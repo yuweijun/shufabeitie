@@ -18,7 +18,7 @@ $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh |
 $ nvm install 0.12.2
 $ npm install pm2 -g
 
-$ git clone https://github.com/yuweijun/www.shufabeitie.com.git beitie
+$ git clone https://github.com/yuweijun/beitie.git beitie
 $ git clone https://github.com/yuweijun/shufabeitie.git shufabeitie
 
 $ cd shufabeitie
