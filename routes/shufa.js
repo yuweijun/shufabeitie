@@ -25,11 +25,7 @@ router.use(/(^.*?[^\/])$/, function(req, res, next) {
     res.redirect(url);
 });
 
-router.use(/(.*?)\/(.*?)\/info\/?$/, function(req, res, next) {
-    next();
-});
-
-// define the home page route
+// define the /shufa page route
 router.get(['/', '/authors'], function(req, res) {
     var data = {
         title: '书法碑帖',
