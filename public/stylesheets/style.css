@@ -5,7 +5,7 @@ html {
     border-radius: 0;
 }
 #beities {
-    margin-bottom: 40px;
+    margin-bottom: 0px;
 }
 .beitie-version {
     font-size: 12px;
@@ -61,10 +61,11 @@ html {
     text-align: center;
 }
 #footer-info {
-    background: #000;
     height: 50px;
     line-height: 50px;
     text-align: center;
+    font-size: smaller;
+    color: #bababa;
 }
 #footer-navigator {
     width: 100%;
