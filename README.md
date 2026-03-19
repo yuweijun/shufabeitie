@@ -25,7 +25,12 @@ $ cd shufabeitie
 $ ln -s ../beitie public/beitie
 $ npm install
 $ bin/jpgthumbnail
+
+$ ls ~/.pm2/logs/
 $ pm2 start processes.json
+$ pm2 logs
+$ pm2 logs --lines 100
+$ pm2 flush
 ```
 
 ## create index.html for beitie directory
