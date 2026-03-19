@@ -4,7 +4,7 @@
 
 书法碑帖图片都有三种尺寸，一种是碑帖目录下的原尺寸的图片，个别书法长卷有近`40M`一张图。另二种是在`w100`和`w1000`目录下的宽度分别为`100像素`和`1000像素`的缩略图，用以在网页上显示查看。如果原图宽度就是小于`1000像素`的，则`w1000`目录下的图片实际上就是原图。
 
-本项目基于`nodejs/expressjs`开发，源码全部开源托管在[github](https://github.com/yuweijun/shufabeitie)上，碑帖介绍说明编辑页面的默认用户名密码可以通过`config/users.json`配置，密码加密算法为`sha1`，`session-cookie`可以通过`config/session-config.json`配置。
+本项目基于`nodejs/expressjs`开发。
 
 ## 安装：
 

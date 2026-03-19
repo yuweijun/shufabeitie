@@ -2,7 +2,6 @@ var fs = require('fs');
 var path = require('path');
 var date = require('datejs');
 var express = require('express');
-var authenticate = require('../modules/users');
 var thumbnail = require('../modules/thumbnail');
 var jsonarrayutils = require('../modules/jsonarrayutils');
 var faties = require('../modules/indexgenerator');
@@ -27,12 +26,7 @@ router.use(/(^.*?[^\/])$/, function(req, res, next) {
 });
 
 router.use(/(.*?)\/(.*?)\/info\/?$/, function(req, res, next) {
-    var user = req.session.user;
-    if (authenticate(user)) {
-        next();
-    } else {
-        res.redirect('/shufa/login?url=' + req.originalUrl);
-    }
+    next();
 });
 
 // define the home page route
@@ -47,26 +41,6 @@ router.get(['/', '/authors'], function(req, res) {
         res.json(faties.authors);
     } else {
         res.render(path.join(shufa, 'index'), data);
-    }
-});
-
-router.get('/login', function(req, res) {
-    res.render(path.join(shufa, 'login'));
-});
-
-router.post('/login', function(req, res) {
-    var user = authenticate(req.body);
-    if (user) {
-        // console.log(user, req.query.url);
-        req.body.id = user.id;
-        req.session.user = req.body;
-        if (req.query.url) {
-            res.redirect(req.query.url);
-        } else {
-            res.redirect('/');
-        }
-    } else {
-        res.render(path.join(shufa, 'login'));
     }
 });
 
@@ -188,7 +162,7 @@ router.get(/^\/([^\/]*?)\/([^\/]*?)\/$/, function(req, res) {
     }
 });
 
-// edit .data.json
+// get .data.json
 router.get(/^\/(.*?)\/(.*?)\/info\/?$/, function(req, res) {
     var author = decodeURIComponent(req.params[0]),
         paper = decodeURIComponent(req.params[1]),
@@ -229,27 +203,6 @@ router.get(/^\/(.*?)\/(.*?)\/info\/?$/, function(req, res) {
         next: siblings[nextIndex]
     };
     res.render(path.join(shufa, 'info'), json);
-});
-
-// save .data.json
-router.post(/(.*?)\/(.*?)\/info\/?$/, function(req, res) {
-    var author = decodeURIComponent(req.params[0]),
-        paper = decodeURIComponent(req.params[1]),
-        dir = path.join(root, beitie, author, paper),
-        info = '.data.json',
-        infofile = path.join(dir, info),
-        versions = [];
-
-    // 保存时需要将最新的版本加到数组最前面
-    // 删除中英文空格
-    req.body.text = req.body.text.replace(/[\u0020\u3000\u00a0]+/g, '').replace(/[\r\n]+/g, '\n').replace(/\[\d+\]/g, '');
-    req.body.timestamp = new Date().getTime();
-    // 内容是否已经可以发布
-    req.body.published = true;
-    versions.push(req.body);
-    jsonarrayutils.write(infofile, versions);
-
-    res.redirect('./');
 });
 
 module.exports = router;

@@ -13,15 +13,11 @@ block content
                 a(href="/shufa/#{author}/#{next}/info") 下一法帖
             li
                 a(href="./")= paper
+            li
+                碑帖简介
 
-        form#beitie-info-container.form.alert.alert-warning(method="post")
-            .row.form-group
+        div#beitie-info-container.form.alert.alert-warning
+            .row
                 .col-md-12
-                    label 碑帖简介
-                    textarea#beitie-text.form-control(name="text")= info.text
-            .row.beitie-info-row
-                .col-md-12
-                    .row
-                        .form-group.col-md-12.col-sm-12.text-center
-                            input.btn.btn-default(type="submit", value="保存")
+                    p#beitie-info= info.text
 
