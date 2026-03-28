@@ -12,7 +12,7 @@
     "cookie-parser": "^1.4.7",
     "cookie-session": "^2.1.1",
     "datejs": "^1.0.0-rc3",
-    "debug": "~2.1.1",
+    "debug": "~4.1.1",
     "express": "^4.16.3",
     "gulp": "^5.0.1",
     "gulp-concat": "~2.6.0",
